@@ -1,0 +1,1016 @@
+Build the complete **SAMCARE HOSPITAL** website as a fully standalone local application.
+
+## CRITICAL TECHNOLOGY REQUIREMENT
+
+Use **ONLY**:
+
+* HTML5
+* CSS3
+* Vanilla JavaScript ES6+
+* Browser LocalStorage
+
+### DO NOT USE:
+
+* React
+* Next.js
+* Vue
+* Angular
+* Node.js
+* Express
+* Supabase
+* Firebase
+* MongoDB
+* MySQL
+* PostgreSQL
+* Any external database
+* Any backend
+* Any paid API
+* Any external AI API
+* Any framework
+* Any build system that requires installation
+
+The entire application must run directly in a browser from the downloaded project files.
+
+The user should be able to download the project, open the main HTML file, and use the application locally.
+
+## CORE BRAND
+
+**SAMCARE HOSPITAL**
+
+Tagline:
+
+**“One patient. One connected healthcare journey.”**
+
+Secondary branding:
+
+**“Powered by SamCare AI”**
+
+The application should feel like a premium modern hospital platform, not a school project or generic dashboard.
+
+Use a clean professional healthcare visual language with blue/teal tones and one restrained emergency accent.
+
+Avoid excessive gradients, excessive glassmorphism, childish graphics, sci-fi styling, giant cards, unnecessary animations, and clutter.
+
+---
+
+# MOST IMPORTANT FEATURE
+
+## ⚡ RAPID ASSIST
+
+Rapid Assist is the **main innovation and the most visually prominent feature** in the entire application.
+
+Do not bury it inside another menu.
+
+The patient dashboard must immediately show Rapid Assist.
+
+The main workflow must visually demonstrate:
+
+**SCAN → ANALYZE → IDENTIFY CONCERN → ROUTE CARE → MATCH DOCTOR → SEND REPORT → CONNECT → APPOINTMENT → CONSULTATION → PRESCRIPTION → FOLLOW-UP**
+
+This must be a functional local prototype, not a collection of static mockup screens.
+
+Use JavaScript and LocalStorage to make the workflow actually update application data.
+
+---
+
+# RAPID ASSIST: INJURY IMAGE
+
+Allow the patient to:
+
+1. Upload an injury image.
+2. Preview the image.
+3. Start Rapid Assist analysis.
+4. Display a realistic scanning animation.
+5. Display progressive analysis stages.
+6. Show visible observations.
+7. Identify an appropriate care category.
+8. Recommend an appropriate doctor.
+9. Create a clinical summary.
+10. Save the case to LocalStorage.
+11. Send the case to the appropriate doctor's dashboard.
+12. Create a nurse/staff alert.
+13. Add the event to the patient's Care Journey.
+
+The visual process should feel like actual analysis is happening.
+
+Show stages such as:
+
+**Image Received**
+
+**Scanning**
+
+**Visible Features Identified**
+
+**Care Category Determined**
+
+**Doctor Matched**
+
+**Clinical Summary Prepared**
+
+**Secure Handoff Complete**
+
+Do not pretend that the browser is performing medically validated diagnosis.
+
+Clearly distinguish:
+
+**WHAT IS VISIBLE**
+
+from
+
+**WHAT REQUIRES CLINICAL CONFIRMATION**
+
+Example:
+
+Affected Area: Hand
+
+Visible Observations:
+
+* Localized swelling
+* Visible discoloration
+* Superficial wound visible
+
+Preliminary Concern:
+**Musculoskeletal injury may require clinical assessment**
+
+Confidence:
+**Moderate**
+
+Recommended Next Step:
+**Clinical evaluation recommended**
+
+Never claim that an image definitively proves a fracture, infection, disease, or other diagnosis.
+
+---
+
+# RAPID ASSIST: BLOOD REPORT
+
+Allow the patient to upload a blood report image or PDF where browser capabilities permit.
+
+Because this is a completely local HTML/CSS/JS application with no backend or AI API, do NOT pretend that a sophisticated medical OCR system exists.
+
+Instead, create a clearly labelled **demo analysis mode** that can work with provided demo report data and demonstrate the intended workflow.
+
+For demo data, display:
+
+* Test name
+* Result
+* Unit
+* Reference range
+* Within provided range / outside provided range
+
+Always use the reference range printed on the report/demo data.
+
+Never invent medical values and present them as genuinely extracted from an uploaded patient's report.
+
+If a file cannot be reliably interpreted, clearly say:
+
+**“This file could not be reliably interpreted in local demo mode. Please verify the report with a healthcare professional.”**
+
+---
+
+# CARDIOVASCULAR ROUTING
+
+If the available demo report information indicates that cardiovascular evaluation may be appropriate, show:
+
+**CARDIOVASCULAR EVALUATION RECOMMENDED**
+
+Explain that the available findings may warrant cardiovascular evaluation.
+
+Route the case to:
+
+**Dr. Samyuktha Raja**
+**Cardiologist**
+
+The system must:
+
+* Create the Rapid Assist case.
+* Save it to LocalStorage.
+* Display the recommended doctor.
+* Show the routing reason.
+* Send the clinical summary to the doctor's dashboard.
+* Create an appropriate staff notification.
+* Recommend booking an appointment.
+* Add the event to the patient's Care Journey.
+
+Never say:
+
+“Heart disease detected.”
+
+Use language such as:
+
+**“The available information may warrant cardiovascular evaluation.”**
+
+---
+
+# MUSCULOSKELETAL ROUTING
+
+For an injury-related case that may require musculoskeletal evaluation, show:
+
+**MUSCULOSKELETAL EVALUATION RECOMMENDED**
+
+Route to:
+
+**Dr. Reshmitha Raja**
+**Orthopedic**
+
+Display the visual pathway:
+
+**Injury Image → Rapid Assist Scan → Visible Findings → Musculoskeletal Care → Dr. Reshmitha Raja → Report Sent → Appointment Recommended**
+
+Do not claim a definite fracture.
+
+---
+
+# NEUROLOGICAL ROUTING
+
+For an appropriate neurological concern, show:
+
+**NEUROLOGICAL EVALUATION RECOMMENDED**
+
+Route to:
+
+**Dr. Vithya Raja**
+**Neurology**
+
+Display:
+
+**Patient Information → Rapid Assist Analysis → Neurological Evaluation → Dr. Vithya Raja → Clinical Summary Sent → Appointment Recommended**
+
+Do not make definitive neurological diagnoses.
+
+---
+
+# DOCTORS
+
+Use these exact names and specialties everywhere:
+
+### Main Doctor
+
+**Dr. Samyuktha Raja**
+Cardiologist
+Doctor ID: **DOC-SR001**
+
+### Doctor
+
+**Dr. Reshmitha Raja**
+Orthopedic
+Doctor ID: **DOC-RR002**
+
+### Doctor
+
+**Dr. Vithya Raja**
+Neurology
+Doctor ID: **DOC-VR003**
+
+### Doctor
+
+**Dr. Raja M.V.**
+Doctor
+Doctor ID: **DOC-AM004**
+
+Do not change the spelling of these names.
+
+Do not use older or alternative spellings.
+
+Create working demo doctor accounts for all four doctors.
+
+---
+
+# THREE USER PORTALS ONLY
+
+There must be exactly three portal types:
+
+1. **Patient**
+2. **Doctor**
+3. **Nurse/Staff**
+
+There must be:
+
+**NO ADMIN LOGIN**
+
+**NO ADMIN PORTAL**
+
+---
+
+# PATIENT PORTAL
+
+Create a complete patient dashboard for:
+
+**Alex Morgan**
+
+Patient ID:
+
+**SC-284731**
+
+The dashboard must prominently display:
+
+* Rapid Assist
+* Doctor Connect
+* Appointments
+* Consultation
+* Consultation Memory
+* Prescriptions
+* Follow-up
+* My Care Journey
+* Records
+* SamCare AI
+* Health Awareness Challenge
+* Notifications
+
+The first screen after login should make Rapid Assist immediately obvious.
+
+Use:
+
+**“Welcome back, Alex.”**
+
+Include a strong:
+
+**Today’s Care**
+
+section.
+
+Include:
+
+**My Care Journey**
+
+as a visual timeline.
+
+---
+
+# DOCTOR CONNECT
+
+Create a professional doctor directory.
+
+Show:
+
+* Doctor name
+* Specialty
+* Availability
+* Consultation type
+* Connect button
+* Book Appointment button
+
+Patients can select/connect with different doctors.
+
+The active **My Connected Doctor** section must show only the doctor actually connected to that patient.
+
+Do not show all doctors as if they are already connected.
+
+Store connections in LocalStorage.
+
+---
+
+# APPOINTMENT BOOKING
+
+Create a functional appointment workflow:
+
+**Select Doctor → Select Date → Select Available Time → Confirm Appointment**
+
+Save appointments in LocalStorage.
+
+The appointment must appear in:
+
+* Patient dashboard
+* Correct doctor's dashboard
+* Nurse/Staff dashboard when coordination is needed
+
+Allow Rapid Assist to lead directly into appointment booking with the recommended doctor.
+
+---
+
+# CONSULTATION
+
+Create a professional consultation interface containing:
+
+* Patient
+* Doctor
+* Consultation status
+* Join Consultation
+* Duration
+* Notes
+* End Consultation
+
+Because this is a standalone local prototype, do not falsely claim that a real video call is taking place.
+
+Clearly label it as:
+
+**“SamCare Prototype Consultation Environment”**
+
+After the consultation ends, create a **Consultation Memory** record.
+
+---
+
+# CONSULTATION MEMORY
+
+Save:
+
+* Doctor
+* Patient
+* Date
+* Reason
+* Summary
+* Notes
+* Prescription
+* Follow-up
+
+Store the information in LocalStorage.
+
+Allow the patient to view previous Consultation Memories.
+
+---
+
+# PRESCRIPTION
+
+Doctors must be able to create prescriptions containing:
+
+* Medicine
+* Instructions
+* Duration
+* Doctor
+* Date
+* Treatment status
+
+Create a treatment journey:
+
+**Prescription Issued → Treatment in Progress → Follow-up Due → Doctor Review → Completed/Continued**
+
+The patient must be able to view prescriptions.
+
+---
+
+# FOLLOW-UP
+
+Doctors can schedule follow-ups.
+
+Patients can see:
+
+* Follow-up date
+* Reason
+* Doctor
+* Status
+
+Show follow-up reminders in the patient dashboard.
+
+---
+
+# MY CARE JOURNEY
+
+Create a visually impressive connected timeline:
+
+**Rapid Assist**
+
+↓
+
+**Doctor Match**
+
+↓
+
+**Doctor Connect**
+
+↓
+
+**Appointment**
+
+↓
+
+**Consultation**
+
+↓
+
+**Consultation Memory**
+
+↓
+
+**Prescription**
+
+↓
+
+**Treatment**
+
+↓
+
+**Follow-up**
+
+This timeline must update based on actual LocalStorage events.
+
+Main message:
+
+**“SAMCARE DOES NOT JUST BOOK A DOCTOR.”**
+
+The application should communicate that SamCare connects the patient's healthcare journey from the initial concern through professional care and follow-up.
+
+---
+
+# DOCTOR PORTAL
+
+The doctor dashboard must not be a single-patient mockup.
+
+Create many fictional demo patients, including:
+
+* Alex Morgan
+* Sarah Wilson
+* Daniel Thomas
+* Maya Joseph
+* Ryan Mathew
+* Emily Thomas
+* Noah Mathews
+* Olivia James
+
+Doctors should see relevant patients and cases.
+
+Each doctor must have their own dashboard.
+
+The dashboard should show:
+
+* Today's appointments
+* Patient queue
+* Rapid Assist cases
+* Doctor Connect requests
+* Patient records
+* Consultation status
+* Consultation Memory
+* Prescriptions
+* Follow-ups
+* Notifications
+
+A doctor should see their own relevant appointments and Rapid Assist cases.
+
+Do not hardcode every case to Dr. Samyuktha Raja.
+
+Use JavaScript logic and LocalStorage to determine which doctor receives which case.
+
+---
+
+# NURSE/STAFF PORTAL
+
+Keep this portal intentionally smaller.
+
+It should include:
+
+* Rapid Assist alerts
+* Patient arrival status
+* Patient response status
+* Patient queue
+* Appointment coordination
+* Notifications
+
+Rapid Assist status:
+
+**REQUEST RECEIVED → ACKNOWLEDGED → RESPONDING → WITH PATIENT → RESOLVED**
+
+Changes must be saved in LocalStorage.
+
+---
+
+# SAMCARE AI
+
+Create a local **SamCare AI** interface.
+
+Since no external AI API is allowed, this must be a rule-based/local assistant rather than pretending to use a real AI model.
+
+It can provide prepared responses for:
+
+* General health information
+* Medical terminology explanations
+* Appointment instructions
+* Prescription instructions
+* Preparing questions for a doctor
+* App navigation
+* Explaining the patient's existing Care Journey
+
+Always display:
+
+**“SamCare AI provides general information and does not replace professional medical advice.”**
+
+Do not present the local assistant as a real doctor.
+
+---
+
+# HEALTH AWARENESS CHALLENGE
+
+Create a small educational feature containing:
+
+* Daily questions
+* Mini quizzes
+* Health facts
+* Progress
+* Categories
+* Optional badges/streaks
+
+Categories:
+
+* Sleep
+* Hydration
+* Nutrition
+* Hygiene
+* Preventive care
+* Mental wellbeing
+* Healthy habits
+
+Keep this educational and positive.
+
+Do not include weight-loss pressure, calorie restriction, body comparisons, or unhealthy challenges.
+
+Save progress in LocalStorage.
+
+---
+
+# RECORDS
+
+Create connected patient records for:
+
+* Rapid Assist history
+* Uploaded reports
+* Appointments
+* Consultations
+* Consultation Memories
+* Prescriptions
+* Follow-ups
+
+Use LocalStorage as the local data store.
+
+---
+
+# NOTIFICATIONS
+
+Create useful notifications such as:
+
+* Rapid Assist received
+* Doctor matched
+* Staff response
+* Appointment confirmed
+* Doctor ready
+* Prescription added
+* Follow-up approaching
+* Consultation completed
+
+Notifications should update based on actual actions.
+
+---
+
+# LANDING PAGE
+
+Create a premium landing page for:
+
+**SAMCARE HOSPITAL**
+
+**“One patient. One connected healthcare journey.”**
+
+Supporting text:
+
+**“From urgent support to everyday care, SamCare connects patients, doctors and hospital staff through one continuous healthcare journey.”**
+
+Primary CTA:
+
+**Enter SamCare**
+
+Secondary CTA:
+
+**Explore Rapid Assist**
+
+Show the healthcare journey visually:
+
+**Scan → Analyze → Doctor Match → Connect → Consult → Treat → Follow Up**
+
+Rapid Assist must be visually dominant.
+
+---
+
+# LOCALSTORAGE ARCHITECTURE
+
+Use structured LocalStorage objects.
+
+Create separate storage keys for things such as:
+
+* users
+* patients
+* doctors
+* appointments
+* doctorConnections
+* rapidAssistCases
+* notifications
+* consultations
+* consultationMemories
+* prescriptions
+* followUps
+* careJourneyEvents
+* records
+* healthChallengeProgress
+
+Create a JavaScript initialization system that automatically creates demo data the first time the application is opened.
+
+Do not require a database installation.
+
+Do not require a server.
+
+---
+
+# LOGIN SYSTEM
+
+Create a local demo authentication system using JavaScript + LocalStorage.
+
+Patient:
+
+**Alex Morgan**
+
+Patient ID:
+
+**SC-284731**
+
+Create a working demo password.
+
+Create four doctor accounts:
+
+**DOC-SR001**
+Dr. Samyuktha Raja
+
+**DOC-RR002**
+Dr. Reshmitha Raja
+
+**DOC-VR003**
+Dr. Vithya Raja
+
+**DOC-AM004**
+Dr. Raja M.V.
+
+Use demo passwords:
+
+**SamCare@001**
+**SamCare@002**
+**SamCare@003**
+**SamCare@004**
+
+Create a Nurse/Staff demo account as well.
+
+Authentication only needs to be suitable for a local competition prototype. Clearly treat it as demo authentication, not production hospital security.
+
+---
+
+# IMPORTANT: SHARED DATA
+
+This is NOT supposed to be several disconnected pages.
+
+Use LocalStorage as the shared application state.
+
+For example:
+
+When Alex submits a Rapid Assist case:
+
+1. The case is saved.
+2. The appropriate doctor receives it.
+3. The nurse/staff portal receives an alert.
+4. Alex's notification updates.
+5. Alex's Care Journey updates.
+6. The doctor's Rapid Assist queue updates.
+
+When Alex books an appointment:
+
+1. Patient dashboard updates.
+2. Doctor dashboard updates.
+3. Nurse/staff queue can update.
+
+When the doctor completes a consultation:
+
+1. Consultation Memory is created.
+2. Patient records update.
+3. Prescription can be created.
+4. Follow-up can be scheduled.
+5. Care Journey updates.
+
+Everything should use the same LocalStorage data.
+
+---
+
+# VISUAL RAPID ASSIST HANDOFF
+
+Create a premium animated visualization:
+
+**Patient Report**
+
+↓
+
+**Rapid Assist Analysis**
+
+↓
+
+**Care Category Identified**
+
+↓
+
+**Doctor Matched**
+
+↓
+
+**Clinical Summary**
+
+↓
+
+**Secure Handoff**
+
+↓
+
+**Doctor Dashboard**
+
+↓
+
+**New Rapid Assist Case**
+
+↓
+
+**Appointment Recommended**
+
+The animation should correspond to actual JavaScript state changes.
+
+Do not create an animation that claims data was sent when nothing was actually saved.
+
+---
+
+# CLINICAL SUMMARY
+
+When a Rapid Assist case is created, generate a structured summary containing:
+
+* Patient name
+* Patient ID
+* Date/time
+* Uploaded file/image status
+* Extracted findings where available
+* Reference ranges where applicable
+* Visible image observations
+* Concern category
+* Urgency
+* Recommended care category
+* Recommended doctor
+* Routing reason
+* Recommended next step
+
+Include:
+
+**“This recommendation is based on available information and is not a medical diagnosis.”**
+
+Urgency options:
+
+* ROUTINE
+* PRIORITY
+* URGENT
+
+The application must clearly encourage appropriate professional or emergency care when a situation appears concerning.
+
+---
+
+# DESIGN QUALITY
+
+Make the interface competition-ready.
+
+Use:
+
+* Premium hospital UI
+* Excellent typography
+* Strong spacing
+* Clean navigation
+* Professional icons
+* Meaningful medical illustrations
+* High-quality fictional/demo doctor imagery where useful
+* Visual timelines
+* Progress indicators
+* Smooth purposeful animations
+* Loading states
+* Success states
+* Error states
+* Empty states
+* Responsive design
+
+Do not make it look like a generic AI-generated dashboard.
+
+Avoid:
+
+* Huge unnecessary cards
+* Excessive gradients
+* Excessive glowing effects
+* Childish graphics
+* Sci-fi interfaces
+* Fake statistics everywhere
+* Unnecessary pages
+* Fake buttons
+* Placeholder text
+* Broken routes
+* Dead interactions
+
+---
+
+# FILE STRUCTURE
+
+Keep the project simple.
+
+Use a structure such as:
+
+index.html
+
+css/
+style.css
+
+js/
+app.js
+auth.js
+storage.js
+rapid-assist.js
+appointments.js
+doctor.js
+patient.js
+nurse.js
+consultation.js
+prescriptions.js
+care-journey.js
+ai.js
+challenge.js
+
+assets/
+images/
+
+Do not add unnecessary frameworks or dependencies.
+
+If a simpler file structure makes the application more reliable, use it.
+
+---
+
+# OFFLINE REQUIREMENT
+
+The application should continue working without an internet connection after the files are downloaded.
+
+Do not make core functionality dependent on:
+
+* API calls
+* Cloud databases
+* External authentication
+* External AI
+* External backend servers
+
+If external images/fonts are used, provide sensible local fallbacks so the application remains functional offline.
+
+---
+
+# FINAL TESTING REQUIREMENT
+
+Before considering the application complete, test the full demo flow.
+
+Test:
+
+1. Patient login.
+2. Rapid Assist appears immediately.
+3. Injury/report demo is submitted.
+4. Rapid Assist visibly scans.
+5. Analysis progresses.
+6. Concern category appears.
+7. Correct doctor is recommended.
+8. Clinical summary is created.
+9. Case is saved to LocalStorage.
+10. Doctor dashboard receives the case.
+11. Nurse/Staff receives the appropriate alert.
+12. Patient connects with the doctor.
+13. Patient books an appointment.
+14. Appointment appears in the relevant dashboards.
+15. Consultation begins.
+16. Consultation Memory is created.
+17. Prescription is created.
+18. Follow-up is scheduled.
+19. Patient Care Journey updates completely.
+
+Also test:
+
+**Injury → Musculoskeletal Evaluation → Dr. Reshmitha Raja**
+
+and
+
+**Neurological Concern → Neurological Evaluation → Dr. Vithya Raja**
+
+and
+
+**Cardiovascular Concern → Cardiovascular Evaluation → Dr. Samyuktha Raja**
+
+Check that:
+
+* all four doctor logins work
+* patient login works
+* nurse/staff login works
+* there is no Admin portal
+* doctor dashboards are personalized
+* multiple fictional patients appear
+* LocalStorage data persists after page refresh
+* buttons actually work
+* navigation works
+* no broken pages exist
+* no placeholder functionality remains
+* no doctor names are misspelled
+* Rapid Assist remains the dominant feature
+* the application works as a standalone local HTML/CSS/JS application
+
+## FINAL GOAL
+
+Do not merely create a visual prototype.
+
+Build a **fully interactive standalone SamCare Hospital competition prototype** where HTML, CSS, Vanilla JavaScript and LocalStorage work together to simulate a complete connected hospital journey.
+
+The central message must remain:
+
+**“SAMCARE DOES NOT JUST BOOK A DOCTOR.”**
+
+**“One patient. One connected healthcare journey.”**

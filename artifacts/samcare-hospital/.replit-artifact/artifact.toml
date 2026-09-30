@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SamCare Hospital"
+description = "A polished, offline-ready healthcare prototype connecting patient, doctor, and nurse workflows through Rapid Assist, appointments, consultations, prescriptions, and follow-up using shared browser storage."
+version = "1.0.0"
+id = "artifacts/samcare-hospital"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24513
+
+[services.development]
+run = "pnpm --filter @workspace/samcare-hospital run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/samcare-hospital", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/samcare-hospital/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24513"
+BASE_PATH = "/"

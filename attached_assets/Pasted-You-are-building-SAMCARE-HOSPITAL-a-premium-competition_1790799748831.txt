@@ -1,0 +1,2022 @@
+You are building **SAMCARE HOSPITAL**, a premium, competition-ready, fully connected healthcare web application.
+
+This is not a collection of static mockup screens.
+
+This must be a **working connected healthcare prototype** where Patient, Doctor, and Nurse/Staff actions affect shared data and appear in the appropriate other portals.
+
+The application should feel like a polished healthcare product that could realistically be demonstrated in front of judges.
+
+# 1. CORE BRAND
+
+**SAMCARE HOSPITAL**
+
+**Tagline:**
+**“One patient. One connected healthcare journey.”**
+
+**Powered by SamCare AI**
+
+Core message:
+
+**“SamCare does not just detect a concern or book a doctor. It connects the entire healthcare journey from the first scan to professional care and follow-up.”**
+
+The main innovation is:
+
+# ⚡ RAPID ASSIST
+
+Rapid Assist must be the visual and functional centerpiece of the entire application.
+
+It should immediately communicate:
+
+**SCAN → ANALYZE → IDENTIFY CONCERN → ROUTE CARE → MATCH DOCTOR → SEND REPORT → CONNECT → APPOINTMENT → CONSULTATION → PRESCRIPTION → FOLLOW-UP**
+
+The application should make this journey visually understandable.
+
+---
+
+# 2. NON-NEGOTIABLE RULES
+
+Follow these rules throughout the entire project:
+
+1. Build a real working application, not static screens.
+2. Use shared persistent data.
+3. Patient, Doctor, and Nurse/Staff portals must be connected.
+4. Do NOT create an Admin portal.
+5. There are exactly three portal types:
+
+   * Patient
+   * Doctor
+   * Nurse/Staff
+6. Rapid Assist is the main innovation and receives the strongest development effort.
+7. Do not create fake buttons that do nothing.
+8. Every important button must perform a meaningful action.
+9. Do not hardcode a single doctor's dashboard.
+10. Do not hardcode one patient into every screen.
+11. Use fictional demo data only.
+12. Use realistic healthcare language.
+13. Do not make unsupported medical diagnoses.
+14. Do not claim an ordinary image or blood report automatically diagnoses a disease.
+15. Keep the UI premium, clean, calm, professional, and modern.
+16. Avoid childish design.
+17. Avoid excessive sci-fi styling.
+18. Avoid excessive gradients.
+19. Avoid excessive glassmorphism.
+20. Avoid excessive glowing effects.
+21. Avoid giant decorative cards.
+22. Avoid unnecessary pages.
+23. Avoid unnecessary buttons.
+24. Avoid fake AI-looking animations that do not correspond to actual application events.
+25. Make the application responsive for desktop, tablet, and mobile.
+26. Make all major workflows demonstrable from beginning to end.
+
+---
+
+# 3. TECHNOLOGY
+
+Use:
+
+* HTML5
+* CSS3
+* Vanilla JavaScript ES6+
+* JavaScript modules
+
+Do not use React, Angular, or Vue.
+
+Use a clean modular structure.
+
+Recommended architecture:
+
+* Authentication layer
+* Shared application state/data layer
+* Patient portal
+* Doctor portal
+* Nurse/Staff portal
+* Rapid Assist engine
+* Appointment system
+* Consultation system
+* Prescription/follow-up system
+* Notification system
+* Care Journey system
+* AI service layer
+* File/image/report processing layer
+
+Use **Supabase** where practical for:
+
+* Authentication
+* PostgreSQL database
+* Realtime updates
+* Storage
+
+Use Gemini or another suitable AI service through a secure server-side/serverless endpoint or Supabase Edge Function.
+
+**NEVER expose private AI/API keys in browser JavaScript.**
+
+Use environment variables.
+
+If an external integration cannot be fully implemented, create a clearly labelled prototype fallback rather than pretending that a fake feature is real.
+
+---
+
+# 4. AUTHENTICATION
+
+Create exactly three roles:
+
+## PATIENT
+
+Demo patient:
+
+**Alex Morgan**
+
+Patient ID:
+
+**SC-284731**
+
+Provide a working demo password.
+
+## DOCTOR
+
+Create these four doctor accounts:
+
+### ⭐ Dr. Samyuktha Raja
+
+**Cardiologist**
+Main Doctor
+
+Account ID:
+**DOC-SR001**
+
+Password:
+**SamCare@001**
+
+### Dr. Reshmitha Raja
+
+**Orthopedic**
+
+Account ID:
+**DOC-RR002**
+
+Password:
+**SamCare@002**
+
+### Dr. Vithya Raja
+
+**Neurology**
+
+Account ID:
+**DOC-VR003**
+
+Password:
+**SamCare@003**
+
+### Dr. Raja M.V.
+
+**Doctor**
+
+Account ID:
+**DOC-AM004**
+
+Password:
+**SamCare@004**
+
+Use these names and spellings exactly.
+
+Do not replace them with other names.
+
+## NURSE/STAFF
+
+Create a working Nurse/Staff demo account with a working password.
+
+There must be:
+
+**NO ADMIN LOGIN**
+
+**NO ADMIN DASHBOARD**
+
+After login, route users to the correct portal according to their authenticated role.
+
+---
+
+# 5. CRITICAL SHARED DATA ARCHITECTURE
+
+This is one of the most important requirements.
+
+The three portals must NOT be separate mockups.
+
+They must use the same underlying application data.
+
+Architecture:
+
+**PATIENT**
+↕
+**SHARED DATABASE / REALTIME DATA**
+↕
+**DOCTOR**
+↕
+**SHARED DATABASE / REALTIME DATA**
+↕
+**NURSE/STAFF**
+
+Where appropriate, all three can observe updates to the same healthcare event.
+
+Example:
+
+### Patient uploads Rapid Assist report
+
+Patient:
+→ uploads report
+→ Rapid Assist case created
+→ case saved to database
+
+Doctor:
+→ receives Rapid Assist case
+→ sees patient/case information
+→ notification appears
+
+Nurse/Staff:
+→ receives appropriate workflow alert
+
+Patient:
+→ sees case status
+→ sees doctor routing
+→ Care Journey updates
+
+Another example:
+
+### Doctor creates prescription
+
+Doctor:
+→ creates prescription
+→ prescription saved to shared database
+
+Patient:
+→ prescription immediately appears in Prescription/Records/Care Journey
+
+Another:
+
+### Doctor completes consultation
+
+Doctor:
+→ consultation completed
+→ Consultation Memory saved
+
+Patient:
+→ Consultation Memory appears
+
+Another:
+
+### Doctor schedules follow-up
+
+Doctor:
+→ follow-up created
+
+Patient:
+→ follow-up appears in dashboard and Care Journey
+
+Another:
+
+### Patient books appointment
+
+Patient:
+→ appointment created
+
+Doctor:
+→ appointment appears in doctor's schedule
+
+Nurse/Staff:
+→ appointment appears when relevant for coordination
+
+This must be real shared application behavior.
+
+Do not simulate this using hardcoded duplicate data.
+
+Use database records and shared identifiers such as:
+
+* patient_id
+* doctor_id
+* appointment_id
+* rapid_assist_case_id
+* consultation_id
+* prescription_id
+* follow_up_id
+* care_journey_event_id
+* notification_id
+
+Use realtime subscriptions where practical so updates can appear without requiring a separate mock screen.
+
+---
+
+# 6. PATIENT PORTAL
+
+The Patient Portal is the strongest dashboard.
+
+Patient:
+
+**Alex Morgan**
+
+Dashboard should immediately show:
+
+**Welcome back, Alex**
+
+and:
+
+### ⚡ RAPID ASSIST
+
+Make this visually dominant.
+
+Also display:
+
+* Today's Care
+* Upcoming Appointment
+* My Connected Doctor
+* Recent Care Activity
+* Care Journey progress
+* Notifications
+* Prescription status
+* Follow-up status
+
+Navigation:
+
+* Home
+* Rapid Assist
+* Doctor Connect
+* Appointments
+* Care Journey
+* Records
+* SamCare AI
+* Health Challenge
+
+---
+
+# 7. RAPID ASSIST — MAIN INNOVATION
+
+Rapid Assist must feel like a genuine intelligent healthcare support workflow.
+
+It should support:
+
+### A. Injury/Image Analysis
+
+Patient can:
+
+* Upload injury image
+* Use camera where browser permissions allow
+* Preview image
+* Start scan
+* Watch visual scanning process
+* Receive analysis
+* See visible observations
+* See possible care category
+* See recommended next step
+* See recommended doctor
+* Send clinical summary
+* Connect with doctor
+* Book appointment
+* Track the case in Care Journey
+
+### B. Blood Report Analysis
+
+Patient can upload:
+
+* Image
+* PDF
+
+Extract where technically possible:
+
+* Test name
+* Result
+* Unit
+* Reference range
+
+Compare each result against the reference range printed on the uploaded report.
+
+Never invent reference ranges.
+
+Never invent laboratory values.
+
+Display:
+
+### WITHIN PROVIDED RANGE
+
+and:
+
+### FINDINGS REQUIRING ATTENTION
+
+If the document cannot be reliably read, clearly say:
+
+**“This report could not be reliably interpreted from the uploaded file. Please verify the results with a healthcare professional.”**
+
+---
+
+# 8. RAPID ASSIST VISUAL PROCESSING
+
+The scan cannot simply be a fake spinner.
+
+Create a polished visual processing experience.
+
+Example stages:
+
+### STEP 01
+
+**FILE RECEIVED**
+
+### STEP 02
+
+**SCANNING**
+
+### STEP 03
+
+**ANALYZING AVAILABLE INFORMATION**
+
+### STEP 04
+
+**IDENTIFYING RELEVANT FINDINGS**
+
+### STEP 05
+
+**DETERMINING CARE CATEGORY**
+
+### STEP 06
+
+**MATCHING APPROPRIATE CARE**
+
+### STEP 07
+
+**PREPARING CLINICAL SUMMARY**
+
+### STEP 08
+
+**SECURE HANDOFF**
+
+Use:
+
+* Progress indicator
+* Scan line
+* Processing animation
+* Data appearing progressively
+* Care-category node
+* Doctor matching animation
+* Secure handoff animation
+* Success confirmation
+
+Keep animations elegant and restrained.
+
+The visual experience must correspond to actual state changes.
+
+---
+
+# 9. RAPID ASSIST SAFETY AND MEDICAL LANGUAGE
+
+Rapid Assist is a prototype support system.
+
+It must distinguish:
+
+## WHAT IS VISIBLE
+
+from:
+
+## WHAT REQUIRES CLINICAL CONFIRMATION
+
+For image analysis, possible observations include:
+
+* affected body area
+* visible swelling
+* visible bruising/discoloration
+* visible wound
+* redness
+* apparent deformity
+* other clearly visible observations
+
+Example:
+
+**Affected area:** Hand
+
+**Visible observations:** Localized swelling, visible discoloration, superficial wound visible
+
+**Preliminary concern:** Musculoskeletal injury may require clinical assessment
+
+**Confidence:** Moderate
+
+**Recommended next step:** Clinical evaluation recommended
+
+Never claim:
+
+“Fracture detected”
+
+from an ordinary image alone.
+
+Never claim:
+
+“Infection detected”
+
+from an ordinary image alone.
+
+Never claim a definitive disease diagnosis from a simple uploaded file.
+
+---
+
+# 10. CARDIOVASCULAR ROUTING
+
+If uploaded information contains blood pressure, cholesterol/lipid levels, or other supplied information that may warrant cardiovascular evaluation:
+
+Display the actual extracted:
+
+* Test/value
+* Unit
+* Reference range
+
+Then display:
+
+# CARDIOVASCULAR EVALUATION RECOMMENDED
+
+Use wording such as:
+
+**“These findings may warrant cardiovascular evaluation.”**
+
+Do NOT say:
+
+**“Heart disease detected.”**
+
+Then route the case to:
+
+# Dr. Samyuktha Raja
+
+**Cardiologist**
+
+Create a real Rapid Assist case associated with:
+
+**DOC-SR001**
+
+Show the visual flow:
+
+**Report → Rapid Assist Analysis → Cardiovascular Evaluation → Dr. Samyuktha Raja → Clinical Summary → Doctor Dashboard**
+
+The doctor should receive:
+
+* New case notification
+* Rapid Assist case
+* Patient information
+* Relevant extracted findings
+* Report/image attachment reference
+* Routing reason
+* Recommended next step
+
+Patient should then be able to:
+
+* View the recommendation
+* Connect with Dr. Samyuktha Raja
+* Book an appointment
+* Continue through the Care Journey
+
+---
+
+# 11. MUSCULOSKELETAL ROUTING
+
+If injury analysis suggests a possible musculoskeletal concern:
+
+Display:
+
+# MUSCULOSKELETAL EVALUATION RECOMMENDED
+
+Route to:
+
+# Dr. Reshmitha Raja
+
+**Orthopedic**
+
+Show:
+
+**Injury Image → Rapid Assist Scan → Visible Findings → Musculoskeletal Care → Dr. Reshmitha Raja → Report Sent → Appointment Recommended**
+
+Do not claim a definite fracture.
+
+---
+
+# 12. NEUROLOGICAL ROUTING
+
+If available information indicates that neurological evaluation may be appropriate:
+
+Display:
+
+# NEUROLOGICAL EVALUATION RECOMMENDED
+
+Route to:
+
+# Dr. Vithya Raja
+
+**Neurology**
+
+Show:
+
+**Patient Information → Rapid Assist Analysis → Neurological Evaluation → Dr. Vithya Raja → Clinical Summary Sent → Appointment Recommended**
+
+Do not claim a definitive neurological diagnosis.
+
+---
+
+# 13. GENERAL ROUTING
+
+If the system cannot confidently determine a specialty:
+
+Display:
+
+**GENERAL CLINICAL ASSESSMENT RECOMMENDED**
+
+Do not randomly assign a doctor.
+
+The architecture must support additional specialties later.
+
+---
+
+# 14. RAPID ASSIST CLINICAL SUMMARY
+
+Create a professional clinical-support summary.
+
+Include:
+
+* Patient name
+* Patient ID
+* Date/time
+* Uploaded file/image
+* File type
+* Analysis status
+* Extracted findings
+* Reference ranges
+* Visible observations
+* Concern category
+* Urgency
+* Recommended care category
+* Recommended doctor
+* Routing reason
+* Recommended next step
+
+Include:
+
+**“This recommendation is based on available information and is not a medical diagnosis.”**
+
+Urgency levels:
+
+* ROUTINE
+* PRIORITY
+* URGENT
+
+For serious or concerning situations, clearly direct users toward appropriate professional/emergency care rather than presenting Rapid Assist as a replacement for emergency services.
+
+---
+
+# 15. RAPID ASSIST SECURE HANDOFF
+
+Create an impressive but professional visual handoff sequence:
+
+**PATIENT REPORT**
+↓
+**RAPID ASSIST ANALYSIS**
+↓
+**CARE CATEGORY IDENTIFIED**
+↓
+**DOCTOR MATCHED**
+↓
+**CLINICAL SUMMARY**
+↓
+**SECURE HANDOFF**
+↓
+**DOCTOR DASHBOARD**
+↓
+**NEW RAPID ASSIST CASE**
+↓
+**APPOINTMENT RECOMMENDED**
+
+When the user clicks:
+
+**SEND CLINICAL SUMMARY**
+
+the application must actually:
+
+1. Save the case
+2. Save the patient relationship
+3. Associate the correct doctor
+4. Create doctor notification
+5. Create relevant nurse/staff alert
+6. Update Patient Care Journey
+7. Make the case visible in Doctor Dashboard
+8. Update the patient case status
+
+Do not make this animation-only.
+
+---
+
+# 16. DOCTOR CONNECT
+
+Patient can browse multiple doctors.
+
+Doctor Directory cards should include:
+
+* Doctor name
+* Specialty
+* Availability
+* Consultation type
+* Connect
+* Book Appointment
+
+Doctors:
+
+**Dr. Samyuktha Raja**
+Cardiologist
+
+**Dr. Reshmitha Raja**
+Orthopedic
+
+**Dr. Vithya Raja**
+Neurology
+
+**Dr. Raja M.V.**
+Doctor
+
+Doctor Connect must look professional.
+
+It must NOT resemble a social network.
+
+When the patient clicks Connect:
+
+* Create a real connection record
+* Update doctor side
+* Update patient side
+* Create appropriate notification
+
+The patient’s:
+
+**MY CONNECTED DOCTOR**
+
+section must display only the doctor actually connected to that patient.
+
+Do not display every doctor there.
+
+---
+
+# 17. APPOINTMENT BOOKING
+
+Workflow:
+
+**SELECT DOCTOR**
+→
+**SELECT DATE**
+→
+**SELECT AVAILABLE TIME**
+→
+**CONFIRM**
+→
+**APPOINTMENT CREATED**
+
+Appointment record must include:
+
+* patient
+* doctor
+* date
+* time
+* status
+* consultation type
+* optional Rapid Assist case reference
+
+After creation:
+
+Patient sees appointment.
+
+Doctor sees appointment.
+
+Nurse/Staff sees it when relevant.
+
+Appointment statuses can include:
+
+* REQUESTED
+* CONFIRMED
+* DOCTOR_READY
+* PATIENT_JOINED
+* COMPLETED
+* CANCELLED
+
+---
+
+# 18. CONSULTATION
+
+Create a professional consultation environment.
+
+Display:
+
+* Patient
+* Doctor
+* Consultation reason
+* Status
+* Duration
+* Join control
+* Notes
+* End consultation
+
+If real video infrastructure is unavailable:
+
+Clearly label:
+
+**PROTOTYPE CONSULTATION ENVIRONMENT**
+
+Do not pretend a simulated interface is a real video connection.
+
+The consultation must still create actual application records.
+
+---
+
+# 19. CONSULTATION MEMORY
+
+When consultation ends, save a real Consultation Memory record.
+
+Include:
+
+* Patient
+* Doctor
+* Date
+* Reason
+* Summary
+* Notes
+* Prescription
+* Follow-up
+* Consultation status
+
+Patient can view the saved Consultation Memory.
+
+Doctor can view it later.
+
+It should become part of the patient's Care Journey and Records.
+
+---
+
+# 20. PRESCRIPTION
+
+Doctor can create a prescription.
+
+Fields:
+
+* Medicine
+* Instructions
+* Duration
+* Doctor
+* Date
+* Treatment status
+
+When saved:
+
+Doctor sees it.
+
+Patient sees it.
+
+It appears in Patient Records.
+
+It appears in Care Journey.
+
+Create notifications where appropriate.
+
+---
+
+# 21. TREATMENT FOLLOW-UP
+
+Treatment progression:
+
+**PRESCRIPTION ISSUED**
+↓
+**TREATMENT IN PROGRESS**
+↓
+**FOLLOW-UP DUE**
+↓
+**DOCTOR REVIEW**
+↓
+**COMPLETED / CONTINUED**
+
+Patient sees the status.
+
+Doctor can update the status.
+
+Follow-up date should be visible in the Patient Dashboard.
+
+---
+
+# 22. MY CARE JOURNEY
+
+This should be one of the most visually impressive sections.
+
+Timeline:
+
+**Rapid Assist**
+↓
+**Doctor Match**
+↓
+**Doctor Connect**
+↓
+**Appointment**
+↓
+**Consultation**
+↓
+**Consultation Memory**
+↓
+**Prescription**
+↓
+**Treatment**
+↓
+**Follow-up**
+
+This timeline must update from actual application events.
+
+Do not hardcode a fake completed journey.
+
+Show:
+
+* completed events
+* current stage
+* upcoming stage
+* timestamps where appropriate
+* doctor information
+* relevant documents
+* status indicators
+
+Headline:
+
+# “SAMCARE DOES NOT JUST BOOK A DOCTOR.”
+
+Supporting idea:
+
+**“Every important step stays connected.”**
+
+---
+
+# 23. PATIENT RECORDS
+
+Create a connected Records section.
+
+Include:
+
+### Rapid Assist
+
+* Previous cases
+* Reports
+* Analysis summaries
+
+### Appointments
+
+* Past
+* Upcoming
+
+### Consultations
+
+* Consultation history
+* Consultation Memories
+
+### Prescriptions
+
+* Current
+* Previous
+
+### Follow-ups
+
+* Upcoming
+* Completed
+
+All records must use actual shared data.
+
+---
+
+# 24. DOCTOR PORTAL
+
+Each doctor must receive a personalized dashboard.
+
+Do not show the same hardcoded content to all doctors.
+
+Dashboard sections:
+
+* Today's Overview
+* Today's Appointments
+* Patient Queue
+* Rapid Assist Cases
+* Doctor Connect Requests
+* Patient Records
+* Consultations
+* Consultation Memory
+* Prescriptions
+* Follow-ups
+* Notifications
+
+Doctor dashboard header must dynamically display the logged-in doctor.
+
+For example:
+
+**Welcome, Dr. Samyuktha Raja**
+
+or:
+
+**Welcome, Dr. Reshmitha Raja**
+
+depending on the account.
+
+---
+
+# 25. DOCTOR PATIENT DATA
+
+Create many fictional patients.
+
+Examples:
+
+* Alex Morgan
+* Sarah Wilson
+* Daniel Thomas
+* Maya Joseph
+* Ryan Mathew
+* Emily Thomas
+* Noah Mathews
+* Olivia Thomas
+* Ethan Joseph
+* Sophia Mathew
+
+Use fictional data only.
+
+Doctors should have relevant patient records.
+
+Do not make every doctor see exactly the same cases.
+
+For example:
+
+Dr. Samyuktha Raja should receive cardiovascular-related demo cases.
+
+Dr. Reshmitha Raja should receive musculoskeletal-related demo cases.
+
+Dr. Vithya Raja should receive neurological-related demo cases.
+
+Dr. Raja M.V. can have general doctor cases.
+
+---
+
+# 26. DOCTOR RAPID ASSIST WORKFLOW
+
+Doctor should be able to open a Rapid Assist case.
+
+Display:
+
+* Patient
+* Patient ID
+* Date/time
+* Source
+* Uploaded report/image
+* Extracted findings
+* Reference ranges
+* Visible observations
+* Concern category
+* Urgency
+* Recommended next step
+* Routing reason
+* Case status
+
+Allow doctor actions such as:
+
+* Acknowledge
+* Review
+* Connect with patient
+* Recommend appointment
+* Add note
+* Mark reviewed
+
+Do not allow the doctor dashboard to invent information that was not saved.
+
+---
+
+# 27. DOCTOR CONNECT REQUESTS
+
+Doctors should be able to see incoming patient connection requests.
+
+Actions:
+
+* Review
+* Accept
+* Decline where appropriate
+
+Accepted connection must update shared data.
+
+Patient should see the resulting connection.
+
+---
+
+# 28. NURSE/STAFF PORTAL
+
+Keep this portal intentionally compact.
+
+Dashboard:
+
+### Rapid Assist Alerts
+
+### Patient Queue
+
+### Today's Appointments
+
+### Patient Arrival Status
+
+### Coordination
+
+### Notifications
+
+Rapid Assist statuses:
+
+**REQUEST RECEIVED**
+→
+**ACKNOWLEDGED**
+→
+**RESPONDING**
+→
+**WITH PATIENT**
+→
+**RESOLVED**
+
+When nurse/staff changes a relevant status:
+
+Patient should see the updated status.
+
+Doctor should see relevant status where appropriate.
+
+---
+
+# 29. NOTIFICATION SYSTEM
+
+Create a shared notification system.
+
+Examples:
+
+* Rapid Assist received
+* Doctor matched
+* Doctor Connect accepted
+* Staff response
+* Appointment confirmed
+* Doctor ready
+* Patient joined
+* Consultation completed
+* Prescription added
+* Follow-up approaching
+* Care Journey updated
+
+Notifications should be tied to real records.
+
+Do not fill the application with meaningless fake notifications.
+
+---
+
+# 30. SAMCARE AI
+
+Patient-facing AI assistant.
+
+It can help with:
+
+* General health information
+* Explaining medical terminology
+* Explaining existing care information
+* Appointment instructions
+* Prescription instructions
+* Preparing questions for a doctor
+* App navigation
+* Summarizing the patient's existing Care Journey
+
+Show clearly:
+
+**“SamCare AI provides general information and does not replace professional medical advice.”**
+
+SamCare AI must not pretend to be a doctor.
+
+It must not provide definitive diagnosis.
+
+It should encourage professional medical evaluation when appropriate.
+
+---
+
+# 31. HEALTH AWARENESS CHALLENGE
+
+Keep this smaller than Rapid Assist.
+
+Include:
+
+* Daily question
+* Mini quiz
+* Health facts
+* Progress
+* Categories
+* Optional badges/streaks
+
+Categories:
+
+* Sleep
+* Hydration
+* Nutrition
+* Hygiene
+* Preventive care
+* Mental wellbeing
+* Healthy habits
+
+Keep it educational and positive.
+
+Do not use weight-loss pressure, calorie restriction, body comparison, or unhealthy challenges.
+
+---
+
+# 32. LANDING PAGE
+
+Hero:
+
+# SAMCARE HOSPITAL
+
+### “One patient. One connected healthcare journey.”
+
+Supporting text:
+
+**“From urgent support to everyday care, SamCare connects patients, doctors and hospital staff through one continuous healthcare journey.”**
+
+Buttons:
+
+**ENTER SAMCARE**
+
+**EXPLORE RAPID ASSIST**
+
+Create a visual journey:
+
+**SCAN → ANALYZE → DOCTOR MATCH → CONNECT → CONSULT → TREAT → FOLLOW UP**
+
+Rapid Assist must immediately stand out.
+
+---
+
+# 33. VISUAL STORYTELLING
+
+Use meaningful visuals throughout the application.
+
+Use:
+
+* Premium healthcare imagery
+* Professional medical illustrations
+* Doctor profile imagery clearly labelled fictional/demo
+* Medical icons
+* Timeline graphics
+* Connected workflow diagrams
+* Progress indicators
+* Subtle animated transitions
+* Success states
+* Loading states
+* Error states
+* Empty states
+
+Do not use random decorative images just to fill space.
+
+Every visual should communicate something.
+
+---
+
+# 34. VISUAL STYLE
+
+Use:
+
+* Clean blue/teal healthcare palette
+* One restrained emergency accent
+* Professional typography
+* Strong spacing
+* Clear hierarchy
+* Premium cards
+* Clean tables
+* Elegant timeline components
+* Subtle shadows
+* Purposeful motion
+
+Avoid:
+
+* Neon sci-fi appearance
+* Childish illustrations
+* Excessive glowing
+* Excessive gradients
+* Excessive glassmorphism
+* Huge empty cards
+* Overcrowded dashboards
+* Too many colors
+* Excessive animation
+* Fake futuristic medical interfaces
+
+The goal is:
+
+**Premium hospital technology, not science fiction.**
+
+---
+
+# 35. RAPID ASSIST VISUAL IDENTITY
+
+Rapid Assist should have a distinctive but professional visual identity.
+
+Use:
+
+* ⚡ icon
+* Strong section heading
+* Clear emergency/support accent
+* Processing indicator
+* Scan visualization
+* Care-routing visualization
+* Doctor match visualization
+* Secure handoff visualization
+* Status timeline
+
+On the Patient Dashboard, Rapid Assist should be impossible to miss.
+
+It should be the first major action users notice.
+
+---
+
+# 36. EMPTY, LOADING, SUCCESS AND ERROR STATES
+
+Every major feature must have proper states.
+
+Examples:
+
+### Rapid Assist
+
+Uploading
+→ Scanning
+→ Analyzing
+→ Preparing summary
+→ Complete
+
+### Appointment
+
+Selecting
+→ Confirming
+→ Booked
+
+### Doctor Connect
+
+Request sent
+→ Pending
+→ Accepted
+
+### Consultation
+
+Scheduled
+→ Doctor Ready
+→ Patient Joined
+→ In Progress
+→ Completed
+
+### Prescription
+
+Draft
+→ Issued
+→ Treatment in Progress
+→ Follow-up Due
+
+Do not leave blank screens.
+
+---
+
+# 37. RESPONSIVE DESIGN
+
+The entire application must work on:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+
+Navigation must adapt appropriately.
+
+Rapid Assist must remain prominent on smaller screens.
+
+Tables should become mobile-friendly cards or horizontally scrollable sections where necessary.
+
+---
+
+# 38. ACCESS CONTROL
+
+Implement role-based access.
+
+Patient:
+
+* Only own records
+* Own appointments
+* Own Rapid Assist cases
+* Own prescriptions
+* Own Care Journey
+
+Doctor:
+
+* Relevant assigned/connected patient information
+* Their own appointments
+* Their own Rapid Assist cases
+* Their consultations
+* Their prescriptions
+* Their follow-ups
+
+Nurse/Staff:
+
+* Necessary operational information
+* Rapid Assist alerts
+* Queue
+* Appointment coordination
+* Relevant statuses
+
+Do not expose another patient's private information.
+
+---
+
+# 39. DATABASE CONCEPT
+
+Create appropriate persistent tables/collections for at least:
+
+* users
+* patients
+* doctors
+* staff
+* doctor_connections
+* appointments
+* rapid_assist_cases
+* rapid_assist_findings
+* uploaded_reports
+* consultations
+* consultation_memories
+* prescriptions
+* follow_ups
+* care_journey_events
+* notifications
+* health_challenges
+
+Use relationships between records.
+
+Avoid duplicating data unnecessarily.
+
+---
+
+# 40. DEMO DATA
+
+Create realistic fictional demo data so the dashboards do not look empty.
+
+Include:
+
+* Multiple patients
+* Multiple appointments
+* Multiple doctors
+* Rapid Assist cases
+* Consultation histories
+* Prescriptions
+* Follow-ups
+* Notifications
+* Doctor Connect requests
+
+However, do not overwhelm the UI.
+
+The demo data should feel like a real hospital environment.
+
+---
+
+# 41. PRIMARY COMPETITION DEMONSTRATION
+
+The main demo should tell a complete story.
+
+## STEP 1
+
+Log in as:
+
+**Alex Morgan**
+
+## STEP 2
+
+Immediately show:
+
+**Rapid Assist**
+
+## STEP 3
+
+Upload a suitable fictional/demo medical report.
+
+## STEP 4
+
+Show the actual Rapid Assist processing sequence:
+
+**File Received**
+→
+**Scanning**
+→
+**Analyzing**
+→
+**Findings**
+→
+**Care Category**
+→
+**Doctor Match**
+→
+**Clinical Summary**
+→
+**Secure Handoff**
+
+## STEP 5
+
+For the cardiovascular demo case, show:
+
+# CARDIOVASCULAR EVALUATION RECOMMENDED
+
+Then:
+
+# Dr. Samyuktha Raja
+
+**Cardiologist**
+
+## STEP 6
+
+Send the Clinical Summary.
+
+## STEP 7
+
+Switch to Dr. Samyuktha Raja's Doctor Portal.
+
+Show:
+
+**NEW RAPID ASSIST CASE**
+
+The case must contain the information that was actually submitted by Alex.
+
+## STEP 8
+
+Acknowledge/review the case.
+
+## STEP 9
+
+Return to Alex.
+
+Show the updated Patient Dashboard/Care Journey.
+
+## STEP 10
+
+Connect Alex with Dr. Samyuktha Raja.
+
+## STEP 11
+
+Book an appointment.
+
+## STEP 12
+
+Switch to Doctor Portal.
+
+Show the same appointment.
+
+## STEP 13
+
+Switch to Nurse/Staff.
+
+Show the relevant appointment/coordination alert.
+
+## STEP 14
+
+Begin consultation.
+
+## STEP 15
+
+Complete consultation.
+
+## STEP 16
+
+Save Consultation Memory.
+
+## STEP 17
+
+Create prescription.
+
+## STEP 18
+
+Create follow-up.
+
+## STEP 19
+
+Return to Alex.
+
+Show:
+
+**Rapid Assist → Doctor Match → Doctor Connect → Appointment → Consultation → Consultation Memory → Prescription → Treatment → Follow-up**
+
+This should visibly demonstrate that all portals are connected.
+
+---
+
+# 42. SECONDARY DEMONSTRATIONS
+
+Also make these possible:
+
+### Injury
+
+**Injury Image**
+→
+**Rapid Assist**
+→
+**Visible Findings**
+→
+**Musculoskeletal Evaluation Recommended**
+→
+**Dr. Reshmitha Raja**
+→
+**Clinical Summary**
+→
+**Appointment**
+
+### Neurological
+
+**Patient Information**
+→
+**Rapid Assist Analysis**
+→
+**Neurological Evaluation Recommended**
+→
+**Dr. Vithya Raja**
+→
+**Clinical Summary**
+→
+**Appointment**
+
+These must use the same shared workflow architecture.
+
+---
+
+# 43. DEMO RELIABILITY
+
+For the competition, prioritize reliability over unnecessary complexity.
+
+The app must:
+
+* Load quickly
+* Have no broken routes
+* Have no dead buttons
+* Have no console-breaking errors
+* Handle invalid files gracefully
+* Handle empty states
+* Handle failed uploads
+* Handle unavailable AI services gracefully
+* Maintain data after refresh where backend is configured
+* Keep user role and session correctly
+* Show correct dashboard for each account
+
+If an advanced integration cannot work reliably in the demo environment, provide a clearly labelled prototype fallback that still demonstrates the workflow honestly.
+
+---
+
+# 44. NO FAKE FUNCTIONALITY
+
+Do not create:
+
+* Fake database updates
+* Fake doctor notifications
+* Fake appointments
+* Fake prescriptions
+* Fake consultation records
+* Fake Care Journey updates
+* Fake patient connections
+
+If the UI says:
+
+**“Clinical Summary Sent”**
+
+there must be an actual saved case.
+
+If the UI says:
+
+**“Appointment Confirmed”**
+
+there must be an appointment record.
+
+If the UI says:
+
+**“Prescription Added”**
+
+the patient should actually be able to see it.
+
+If the UI says:
+
+**“Doctor Connected”**
+
+the connection should actually exist in shared data.
+
+---
+
+# 45. CODE QUALITY
+
+Keep the project organized.
+
+Use reusable JavaScript modules/components/functions where practical.
+
+Separate:
+
+* authentication
+* database functions
+* UI rendering
+* Rapid Assist logic
+* doctor routing
+* appointments
+* consultations
+* prescriptions
+* notifications
+* Care Journey
+
+Use clear naming.
+
+Add comments only where they improve understanding.
+
+Do not generate unnecessary code.
+
+---
+
+# 46. FINAL CHECKLIST
+
+Before declaring the project complete, test everything.
+
+## LOGIN
+
+☐ Patient login works
+
+☐ Doctor login works
+
+☐ Nurse/Staff login works
+
+☐ Dr. Samyuktha Raja login works
+
+☐ Dr. Reshmitha Raja login works
+
+☐ Dr. Vithya Raja login works
+
+☐ Dr. Raja M.V. login works
+
+☐ Correct dashboard opens
+
+☐ No Admin login
+
+☐ No Admin portal
+
+---
+
+## RAPID ASSIST
+
+☐ Upload image
+
+☐ Camera where supported
+
+☐ Image preview
+
+☐ Scan animation
+
+☐ Analysis stages
+
+☐ Visible observations
+
+☐ Blood report upload
+
+☐ PDF handling
+
+☐ Extract test name
+
+☐ Extract result
+
+☐ Extract unit
+
+☐ Extract printed reference range
+
+☐ Handle unreadable files
+
+☐ Cardiovascular routing
+
+☐ Orthopedic routing
+
+☐ Neurological routing
+
+☐ General routing
+
+☐ Doctor recommendation
+
+☐ Alternative doctor selection
+
+☐ Clinical Summary
+
+☐ Send Clinical Summary
+
+☐ Doctor notification
+
+☐ Nurse/Staff alert
+
+☐ Patient status update
+
+☐ Care Journey update
+
+☐ Shared data persists
+
+---
+
+## DOCTOR
+
+☐ Multiple doctors
+
+☐ Correct doctor-specific dashboard
+
+☐ Multiple fictional patients
+
+☐ Doctor-specific appointments
+
+☐ Rapid Assist cases
+
+☐ Doctor Connect requests
+
+☐ Patient records
+
+☐ Consultation
+
+☐ Consultation Memory
+
+☐ Prescription
+
+☐ Follow-up
+
+☐ Notifications
+
+---
+
+## PATIENT
+
+☐ Alex Morgan
+
+☐ Rapid Assist immediately visible
+
+☐ Doctor Directory
+
+☐ Doctor Connect
+
+☐ My Connected Doctor
+
+☐ Appointment Booking
+
+☐ Consultation
+
+☐ Consultation Memory
+
+☐ Prescription
+
+☐ Treatment status
+
+☐ Follow-up
+
+☐ Care Journey
+
+☐ Records
+
+☐ Notifications
+
+☐ SamCare AI
+
+☐ Health Challenge
+
+---
+
+## NURSE/STAFF
+
+☐ Login
+
+☐ Rapid Assist alerts
+
+☐ Patient queue
+
+☐ Appointment coordination
+
+☐ Status workflow
+
+☐ Notifications
+
+---
+
+## SHARED DATA
+
+☐ Patient action appears in Doctor Portal
+
+☐ Doctor action appears in Patient Portal
+
+☐ Relevant Doctor action appears in Nurse/Staff Portal
+
+☐ Appointment synchronization works
+
+☐ Rapid Assist synchronization works
+
+☐ Doctor Connect synchronization works
+
+☐ Consultation synchronization works
+
+☐ Prescription synchronization works
+
+☐ Follow-up synchronization works
+
+☐ Care Journey synchronization works
+
+☐ Notifications are connected to real events
+
+---
+
+## DESIGN
+
+☐ Premium healthcare appearance
+
+☐ Rapid Assist visually dominant
+
+☐ Meaningful imagery
+
+☐ Professional fictional doctor imagery
+
+☐ Smooth purposeful animations
+
+☐ Responsive design
+
+☐ No broken routes
+
+☐ No placeholder pages
+
+☐ No dead buttons
+
+☐ No unnecessary pages
+
+☐ No excessive gradients
+
+☐ No excessive glassmorphism
+
+☐ No childish graphics
+
+☐ No excessive sci-fi effects
+
+☐ No Admin
+
+☐ Exact doctor names
+
+☐ Consistent SAMCARE branding
+
+---
+
+# 47. FINAL EXPERIENCE
+
+The finished application should make a judge understand the idea within seconds.
+
+The visual story should be:
+
+**A patient has a concern.**
+
+↓
+
+**Rapid Assist helps organize the available information.**
+
+↓
+
+**The appropriate care category is identified.**
+
+↓
+
+**The appropriate doctor is recommended.**
+
+↓
+
+**The clinical summary is securely handed off.**
+
+↓
+
+**The doctor sees the same case.**
+
+↓
+
+**The patient connects with the doctor.**
+
+↓
+
+**An appointment is booked.**
+
+↓
+
+**Nurse/Staff can coordinate the workflow.**
+
+↓
+
+**Consultation happens.**
+
+↓
+
+**Consultation Memory is saved.**
+
+↓
+
+**Prescription is created.**
+
+↓
+
+**Treatment is tracked.**
+
+↓
+
+**Follow-up is scheduled.**
+
+↓
+
+**The patient's entire journey remains connected.**
+
+The application must communicate:
+
+# “ONE PATIENT. ONE CONNECTED HEALTHCARE JOURNEY.”
+
+And the signature statement:
+
+# “SAMCARE DOES NOT JUST BOOK A DOCTOR.”
+
+It connects the journey.
+
+Build the application with **Rapid Assist as the centerpiece**, while making every supporting feature functional, connected, realistic, polished, and competition-ready.
